@@ -42,6 +42,7 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     'apriori_user',
     'apriori_base',
+    'apriori_review',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS

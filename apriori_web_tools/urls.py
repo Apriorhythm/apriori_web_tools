@@ -23,11 +23,12 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
     url(r'^media/(?P<path>.*)/$', serve, {"document_root": settings.MEDIA_ROOT}),
 
     url(r'', include('apriori_base.urls')),
     url(r'^user/', include('apriori_user.urls')),
+
+    url(r'^review/', include('apriori_review.urls')),
 
 ]
 
