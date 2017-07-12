@@ -1,0 +1,17 @@
+@font-face {
+    font-family:'GreatVibes-Regular';
+    src: url('/static/font/GreatVibes-Regular.ttf');
+}
+
+body {
+    background:#F8F8F8;
+    padding-top: 70px;
+    //padding-bottom: 50px;
+}
+
+
+.navbar input {
+	border-radius: 0;
+}
+
+
