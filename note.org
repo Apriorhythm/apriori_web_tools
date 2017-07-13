@@ -1,0 +1,4 @@
+review main page
+once get into main page, show data of tody
+
+

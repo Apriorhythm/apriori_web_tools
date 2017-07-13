@@ -1,2 +1,2 @@
-# apriori_web_tools
+# Apriori Web Tools
 Just some tools

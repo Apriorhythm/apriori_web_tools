@@ -3,15 +3,35 @@
     src: url('/static/font/GreatVibes-Regular.ttf');
 }
 
+
 body {
     background:#F8F8F8;
     padding-top: 70px;
-    //padding-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 
 .navbar input {
-	border-radius: 0;
+    border-radius: 0;
 }
+
+#apriori-navbar {
+    background:#C0C0C0;
+}
+
+/* 
+ * .icon-bar {
+ *     background:#000000;
+ * }
+ *  */
+
+#apriori-navbar * {
+    color:#000000;
+}
+
+#mainContentDiv {
+    padding:2.5px;
+}
+
 
 

@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block apriori_title %}Web Tools{% endblock %}</title>
+
+</head>
+
+<body>
+<header class="navbar navbar-fixed-top" id="apriori-navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- item -->
+        <nav class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a  href="{% url 'index' %}">&nbsp;HOME</a>
+                </li>
+
+                <li>
+                    <a  href="{% url 'apriori_review:index' %}">&nbsp;REVIEW</a>
+                </li>
+
+            {% if user.is_authenticated %}
+                <li><a  href="{% url 'apriori_user:logout' %}">LOGOUT</a></li>
+            {% endif %}
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<div id="mainContentDiv">
+    {% block apriori_body %}
+        <p>Web Tools</p>
+    {% endblock %}
+</div>
+
+
+
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static '/js/jquery-3.2.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
+
+    <link type="text/css" rel="stylesheet" href="{% static '/bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static '/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+
+    <script type="text/javascript" src="{% static '/js/base.js' %}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static '/css/base.css' %}">
+
+    {% block apriori_staticfiles %}
+    {% endblock %}
+
+</body>
+</html>
+

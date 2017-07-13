@@ -1,2 +1,44 @@
+{% extends 'apriori_base/base.html' %}
 
-Review
+{% block apriori_title %}REVIEW{% endblock %}
+
+{% block apriori_staticfiles %}
+{% load staticfiles %}
+    <script src="{% static '/apriori_review/js/index.js' %}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static '/apriori_review/css/index.css' %}" />
+{% endblock %}
+
+
+{% block apriori_body %}
+
+<div class="col-sm-12">
+    <div>
+        <form role="form" class="form-horizontal col-sm-12" action="" method="post">
+        {% csrf_token %}
+
+            <div id="put-data-div" class="input-group row">
+                <input id="data-input" type="text" class="form-control"></input>
+                <span class="input-group-btn">
+                    <button id="put-data-submit" type="button" class="btn btn-default
+                        col-sm-12">Put Data</button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <div id="put-data-status">
+        <label id="put-data-status-label" >TODY</label>
+    </div>
+
+
+    <div id="review-content-div">
+        <ul id="review-content-ul" class="list-group"></ul>
+    <div>
+
+
+
+</div>
+
+{% endblock %}
+
+

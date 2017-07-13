@@ -1,11 +1,14 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from rest_framework import serializers
 
-#from .models import AprioriUser
+from .models import AprioriReview
 
 
-#  class AprioriUserSerializer(serializers.ModelSerializer):
-#
-#      class Meta:
-#          model = AprioriUser
-#          fields = ('username')
-#
+class AprioriReviewSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = AprioriReview
+        fields = ('content', 'create_date')
+

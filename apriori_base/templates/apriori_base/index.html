@@ -1,1 +1,16 @@
+{% extends 'apriori_base/base.html' %}
+
+{% block apriori_title %}REVIEW{% endblock %}
+
+{% block apriori_staticfiles %}
+{% load staticfiles %}
+    <script src="{% static '/apriori_review/js/index.js' %}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static '/apriori_review/css/index.css' %}" />
+{% endblock %}
+
+
+{% block apriori_body %}
 INDEX HERE
+{% endblock %}
+
+
