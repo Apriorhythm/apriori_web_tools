@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '192.168.1.101',
+    '192.168.1.100',
     'yo.org',
 ]
 
@@ -140,7 +140,7 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = "apriori_user.AprioriUser"
 
 # LOGIN_URL
-LOGIN_URL = '/apriori_user/login'
+LOGIN_URL = '/user/login'
 
 # Upload Files
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname('__file__')))

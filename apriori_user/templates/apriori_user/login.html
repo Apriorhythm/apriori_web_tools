@@ -1,26 +1,23 @@
-{% extends 'apriori_base/base.html' %}                                                                                                   
-{% block apriori_title %}Login{% endblock %}
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static '/js/jquery-3.2.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
+
+<link type="text/css" rel="stylesheet" href="{% static '/bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+<link type="text/css" rel="stylesheet" href="{% static '/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<script type="text/javascript" src="{% static '/apriori_user/js/login.js' %}"></script>
+<link type="text/css" rel="stylesheet" href="{% static '/apriori_user/css/login.css' %}">
 
 
-{% block outis_staticfiles %}
-    {% load staticfiles %}
-    <script type="text/javascript" src="{% static '/js/login.js' %}"></script>
-    <link type="text/css" rel="stylesheet" href="{% static '/css/login.css' %}">
-{% endblock %}
 
-
-{% block outis_body %}
-    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="login-page">
-          <div class="form">
-            {% include 'apriori_base/form-template.html' %}
-            <button type="submit">Login</button>
-            </div>
-        </div>
-
-
-    </form>
-{% endblock %}
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="login-page">
+      <div class="form">
+        {% include 'apriori_base/form-template.html' %}
+        <button type="submit">Login</button>
+      </div>
+    </div>
+</form>
 
 

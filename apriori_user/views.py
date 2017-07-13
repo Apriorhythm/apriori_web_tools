@@ -36,24 +36,24 @@ class LoginView(View):
     # process form data
     def post(self, request):
         form = self.form_class(request.POST)
-        login_errors = "Sorry, username or password doesn't match"
+        login_errors = "Sorry, something wrong!"
 
         # cleaned (normalized) data
+        secure_code = request.POST.get('secure_code')
         username = request.POST.get('username')
         password = request.POST.get('password')
-        
+
         # returns User object if credentials are correct
-        if password is not none:
+        if secure_code != 'a':
             return render(request, self.template_name,{'form':form,
             'login_errors':login_errors})
 
         # returns User object if credentials are correct
-        user = authenticate(username=username)
+        user = authenticate(username=username, password=password)
 
         if user is not None:
-            if user.is_active:
-                login(request, user)
-                return redirect('/')
+            login(request, user)
+            return redirect('/')
 
         return render(request, self.template_name,{'form':form,
         'login_errors':login_errors})
