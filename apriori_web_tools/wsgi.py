@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "apriori_web_tools.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE",
+                      "apriori_web_tools.settings.database")
 
 application = get_wsgi_application()
