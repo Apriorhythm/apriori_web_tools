@@ -31,11 +31,11 @@ class IndexView(View):
 class ContentView(APIView):
 
     def get(self, request):
-        day_list = [2, 4, 7, 15, 30, 60]
+        day_list = [5, 9, 15, 30, 60]
 
         content = AprioriReview.objects.filter(
             create_date = datetime.date.today() -
-            datetime.timedelta(days=1))
+            datetime.timedelta(days=2))
 
         for day in day_list:
             content = chain(content ,AprioriReview.objects.filter(
@@ -45,11 +45,9 @@ class ContentView(APIView):
         serializer = AprioriReviewSerializer(content, many=True)
 
         return Response(serializer.data)
-#        print(content)
-#        return Response(content)
+
 
     def post(self, request):
-        print('###############################')
         new_content = request.POST.get('content')
         new_review = AprioriReview(content=new_content)
         if new_content is None:
